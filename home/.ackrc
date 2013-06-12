@@ -1,0 +1,20 @@
+--type-set=rose=.rtlogpkg,.rtclass,.rtclassdgm,.rtcmp,.rtcmpdgm,.rtcmppkg,.rtcollab,.rtdeploy,.rteri,.rtlogpkg,.rtmdl,.rtprcsr,.rtptl,.rtto,.rtusr,.rtwks
+--type-set=eclipse=.cdtproject,.cproject,.project,.pydevproject
+--type-set=config=.conf,.config
+--type-set=dot=.dot
+--type-set=dsl=.flgdsl,.idl,.lidl,.xtext,.xtxt
+--type-set=glade=.glade
+--type-set=patch=.patch
+--type-set=script=.script
+
+--type-add=cpp=.inl
+--type-add=xml=.xsd
+
+# Look more like grep
+--nogroup
+--with-filename
+
+# color scheme for white background
+--color-filename=magenta
+--color-match=red
+--color-lineno=green
