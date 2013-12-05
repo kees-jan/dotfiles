@@ -12,7 +12,7 @@ alias ls="\ls -l"
 alias l="\ls"
 alias h="history"
 
-alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+# alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 
 alias xload="\xload -hl red -geometry  120x73+0-50"
 alias xterm="\xterm -sb -sl 500"
@@ -61,6 +61,9 @@ export EMAIL=kees-jan.dijkzeul@iae.nl
 #         -vf scale=352:208 -ffourcc DIVX \
 #         -ofps 15000/1001 -o "$2";
 # }
+
+HOMESHICK=$HOME/.homesick/repos/homeshick/homeshick.sh
+[ -f $HOMESHICK ] && source $HOMESHICK
 
 # echo done 1>&2
 
