@@ -1,9 +1,9 @@
 ;;; .emacs --- GNU Emacs 19.28+ startup file
 
-;; Copyright (C) 1996, 1997, 1999, 2000, 2001, 2008 by Raymond Penners.
+;; Copyright (C) 1996, 1997, 1999, 2000, 2001, 2008, 2013 by Raymond Penners.
 
 ;; Author: Raymond Penners <raymondp@stack.urc.tue.nl>
-;; Time-stamp: <2010-11-04 19:52:05 kees-jan>
+;; Time-stamp: <2013-06-16 18:20:15 kees-jan>
 
 ;;; Code:
 
@@ -273,3 +273,9 @@
   ;; If there is more than one, they won't work right.
  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; nXML
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(eval-after-load 'rng-loc
+  '(add-to-list 'rng-schema-locating-files "~/.schema/schemas.xml"))
