@@ -55,15 +55,19 @@ fi
 export NAME="Kees-Jan Dijkzeul"
 export EMAIL=kees-jan.dijkzeul@iae.nl
 
-# function encode() {
-#     mencoder -quiet "$1" -oac mp3lame -lameopts abr:br=64 \
-#         -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=300 \
-#         -vf scale=352:208 -ffourcc DIVX \
-#         -ofps 15000/1001 -o "$2";
-# }
-
 HOMESHICK=$HOME/.homesick/repos/homeshick/homeshick.sh
 [ -f $HOMESHICK ] && source $HOMESHICK
+
+### Lunaris
+function setWa()
+{        
+  export WS_ROOT="$(cd $1 ; pwd)"
+  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$WS_ROOT/Export/lib64:$WS_ROOT/Export/toollibs64:$WS_ROOT/Export/lib32:$WS_ROOT/Export/toollibs32"
+  export PATH="$PATH:$WS_ROOT/Export/exe64:$WS_ROOT/Export/exe32:$WS_ROOT/Export/tools64:$WS_ROOT/Export/tools32:$WS_ROOT/Units/PrintStrategy/ResearchTools/scripts"
+
+  alias cdwsr="cd $WS_ROOT"  
+}
+### End Lunaris
 
 # echo done 1>&2
 
