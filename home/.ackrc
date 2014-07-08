@@ -17,4 +17,4 @@
 # color scheme for white background
 --color-filename=magenta
 --color-match=red
---color-lineno=green
+#--color-lineno=green
