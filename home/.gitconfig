@@ -3,3 +3,5 @@
 	email = kees-jan.dijkzeul@iae.nl
 [push]
 	default = current
+[merge]
+	tool = kdiff3
