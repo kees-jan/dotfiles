@@ -5,6 +5,13 @@ method                  = scp
 incoming                = /spacy/ftp/share/4d25c1b9c1059f4db61c10de1e9c69da31fddc3632cb6daa41dec63dd8bee322-mutracx-apt-repo/apt/incoming
 allow_dcut              = 1
 
+[test-mutracx]
+login                   = kees-jan
+fqdn                    = fuzzy.homedns.org
+method                  = scp
+incoming                = /spacy/ftp/share/4d25c1b9c1059f4db61c10de1e9c69da31fddc3632cb6daa41dec63dd8bee322-mutracx-apt-repo/apt/test-incoming
+allow_dcut              = 1
+
 [scroom]
 fqdn			= ppa.launchpad.net
 method			= ftp
