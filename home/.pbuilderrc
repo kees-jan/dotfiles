@@ -2,7 +2,6 @@
 
 # List of Ubuntu suites. Update these when needed.
 UBUNTU_SUITES=("vivid", "utopic", "trusty" "precise")
-MUTRACX_SUITES=("mutracx")
 
 # Mirrors to use. Update these to your preferred mirror.
 # DEBIAN_MIRROR="ftp.us.debian.org"
@@ -34,14 +33,6 @@ if $(echo ${UBUNTU_SUITES[@]} | grep -q $DIST); then
     MIRRORSITE="http://$UBUNTU_MIRROR/ubuntu/"
     COMPONENTS="main restricted universe multiverse"
     DEBOOTSTRAPOPTS=("${DEBOOTSTRAPOPTS[@]}" "--keyring=/usr/share/keyrings/ubuntu-archive-keyring.gpg")
-elif $(echo ${MUTRACX_SUITES[@]} | grep -q $DIST); then
-    # Mutracx configuration
-
-    # pbuilder create not supported, hence no need to set stuff
-    # here. Just use pre-built base.tgz files.
-
-    # Disable caching. All packages are local anyway
-    APTCACHE=""
 else
     echo "Unknown distribution: $DIST"
     exit 1
