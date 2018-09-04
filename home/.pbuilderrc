@@ -1,7 +1,7 @@
 # -*- sh -*-
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("vivid", "utopic", "trusty" "precise")
+UBUNTU_SUITES=("bionic", "cosmic", "xenial", "trusty")
 
 # Mirrors to use. Update these to your preferred mirror.
 # DEBIAN_MIRROR="ftp.us.debian.org"
@@ -25,8 +25,8 @@ BASETGZ="/var/cache/pbuilder/$NAME-base.tgz"
 # BASEPATH="/var/cache/pbuilder/$NAME/base.cow/"
 DISTRIBUTION="$DIST"
 BUILDRESULT="/home/kees-jan/build/pbuilder/$NAME/result/"
-APTCACHE="/home/kees-jan/build/pbuilder/$NAME/aptcache/"
-BUILDPLACE="/home/kees-jan/temp/pbuilder"
+APTCACHE="/var/cache/pbuilder/$NAME/aptcache/"
+BUILDPLACE="/var/cache/pbuilder/build/"
 
 if $(echo ${UBUNTU_SUITES[@]} | grep -q $DIST); then
     # Ubuntu configuration

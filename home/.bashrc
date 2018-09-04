@@ -30,6 +30,9 @@ if [ -z "$OLDPATH" ] ; then
     if [ -d ~/bin ] ; then
         PATH=~/bin:"${PATH}"
     fi
+
+    # Ruby gems
+    for d in ~/.gem/ruby/*/bin ; do PATH="${PATH}:$d" ; done
     
     # do the same with MANPATH
     if [ -d ~/man ]; then
@@ -71,3 +74,6 @@ function setWa()
 
 # echo done 1>&2
 
+
+# added by travis gem
+[ -f /home/kees-jan/.travis/travis.sh ] && source /home/kees-jan/.travis/travis.sh

@@ -5,3 +5,5 @@
 	default = current
 [merge]
 	tool = kdiff3
+[alias]
+	lg = log --pretty=format:'%C(yellow)%h %Creset%s%Cgreen%d' --all --graph -n 50
