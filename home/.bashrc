@@ -15,12 +15,17 @@ alias h="history"
 # alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
 
 alias xload="\xload -hl red -geometry  120x73+0-50"
-alias xterm="\xterm -sb -sl 500"
 
 alias renamefotos="jhead -autorot -ft -nf'%y%m%d-%H%M%S'"
 
-alias sad="sudo apt-get dist-upgrade"
-alias sau="sudo apt-get update"
+if which apt > /dev/null
+then
+    alias sad="sudo apt full-upgrade"
+    alias sau="sudo apt update"
+else
+    alias sad="sudo apt-get dist-upgrade"
+    alias sau="sudo apt-get update"
+fi
 alias acs="apt-cache search"
 
 if [ -z "$OLDPATH" ] ; then
@@ -60,17 +65,6 @@ export EMAIL=kees-jan.dijkzeul@iae.nl
 
 HOMESHICK=$HOME/.homesick/repos/homeshick/homeshick.sh
 [ -f $HOMESHICK ] && source $HOMESHICK
-
-### Lunaris
-function setWa()
-{        
-  export WS_ROOT="$(cd $1 ; pwd)"
-  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$WS_ROOT/Export/lib64:$WS_ROOT/Export/toollibs64:$WS_ROOT/Export/lib32:$WS_ROOT/Export/toollibs32"
-  export PATH="$PATH:$WS_ROOT/Export/exe64:$WS_ROOT/Export/exe32:$WS_ROOT/Export/tools64:$WS_ROOT/Export/tools32:$WS_ROOT/Units/PrintStrategy/ResearchTools/scripts"
-
-  alias cdwsr="cd $WS_ROOT"  
-}
-### End Lunaris
 
 # echo done 1>&2
 
