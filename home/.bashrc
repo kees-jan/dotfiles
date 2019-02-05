@@ -18,7 +18,7 @@ alias xload="\xload -hl red -geometry  120x73+0-50"
 
 alias renamefotos="jhead -autorot -ft -nf'%y%m%d-%H%M%S'"
 
-if which apt > /dev/null
+if which apt > /dev/null 2>&1
 then
     alias sad="sudo apt full-upgrade"
     alias sau="sudo apt update"
