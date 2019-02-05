@@ -1,10 +1,31 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# echo -n Loading bashrc... 1>&2
+# Check that we haven't already been sourced.
+([[ -z ${CYG_SYS_BASHRC} ]] && CYG_SYS_BASHRC="1") || return
 
-export PS1='\[\033]0;\w\007
-\033[32m\]\u@\h \[\033[33m\w\033[0m\]
-$ '
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# If started from sshd, make sure profile is sourced
+if [[ -n "$SSH_CONNECTION" ]] && [[ "$PATH" != *:/usr/bin* ]]; then
+    source /etc/profile
+fi
+
+echo -n Loading bashrc... 1>&2
+
+# export PS1='\[\033]0;\w\007
+# \033[32m\]\u@\h \[\033[33m\w\033[0m\]
+# $ '
+
+# if we have the "High Mandatory Level" group, it means we're elevated
+#if [[ -n "$(command -v getent)" ]] && id -G | grep -q "$(getent -w group 'S-1-16-12288' | cut -d: -f2)"
+#  then _ps1_symbol='\[\e[1m\]#\[\e[0m\]'
+#  else _ps1_symbol='\$'
+#fi
+[[ $(declare -p PS1 2>/dev/null | cut -c 1-11) = 'declare -x ' ]] || \
+  export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[35m\]$MSYSTEM\[\e[0m\] \[\e[33m\]\w\[\e[0m\]\n'"${_ps1_symbol}"' '
+unset _ps1_symbol
+
 
 export EDITOR=joe
 
@@ -66,8 +87,9 @@ export EMAIL=kees-jan.dijkzeul@iae.nl
 HOMESHICK=$HOME/.homesick/repos/homeshick/homeshick.sh
 [ -f $HOMESHICK ] && source $HOMESHICK
 
-# echo done 1>&2
-
-
 # added by travis gem
 [ -f /home/kees-jan/.travis/travis.sh ] && source /home/kees-jan/.travis/travis.sh
+
+echo done 1>&2
+
+
