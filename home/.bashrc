@@ -82,7 +82,7 @@ if [ -z "$OLDPATH" ] ; then
 fi
 
 export NAME="Kees-Jan Dijkzeul"
-export EMAIL=kees-jan.dijkzeul@iae.nl
+export EMAIL=kees-jan@dijkzeul.eu
 
 HOMESHICK=$HOME/.homesick/repos/homeshick/homeshick.sh
 [ -f $HOMESHICK ] && source $HOMESHICK
