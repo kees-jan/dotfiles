@@ -6,4 +6,4 @@
 [merge]
 	tool = kdiff3
 [alias]
-	lg = log --pretty=format:'%C(yellow)%h %Creset%s%Cgreen%d' --all --graph -n 50
+	lg = log --pretty=format:'%C(yellow)%h %Creset%s%Cgreen%d' --graph -n 50
