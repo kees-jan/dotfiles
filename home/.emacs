@@ -3,7 +3,7 @@
 ;; Copyright (C) 1996, 1997, 1999, 2000, 2001, 2008, 2013 by Raymond Penners.
 
 ;; Author: Raymond Penners <raymondp@stack.urc.tue.nl>
-;; Time-stamp: <2013-06-16 18:20:15 kees-jan>
+;; Time-stamp: <2020-03-25 17:51:38 kees-jan>
 
 ;;; Code:
 
@@ -61,6 +61,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Programming
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; CMake
+(load "~/.emacs.d/elisp/cmake-mode.el" t)
 
 ;;; C/C++
 (add-to-list 'auto-mode-alist '("\\.hpp\\'" . c++-mode))

@@ -52,6 +52,10 @@ alias acs="apt-cache search"
 if [ -z "$OLDPATH" ] ; then
     export OLDPATH=$PATH
 
+    if [ -d ~/.local/bin ] ; then
+        PATH=~/.local/bin:"${PATH}"
+    fi
+
     # set PATH so it includes user's private bin if it exists
     if [ -d ~/bin ] ; then
         PATH=~/bin:"${PATH}"

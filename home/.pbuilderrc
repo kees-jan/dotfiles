@@ -1,7 +1,7 @@
 # -*- sh -*-
 
 # List of Ubuntu suites. Update these when needed.
-UBUNTU_SUITES=("bionic", "cosmic", "xenial", "trusty")
+UBUNTU_SUITES=("focal", "eoan", "bionic")
 
 # Mirrors to use. Update these to your preferred mirror.
 # DEBIAN_MIRROR="ftp.us.debian.org"

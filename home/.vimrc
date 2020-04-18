@@ -75,7 +75,7 @@ set autoread                   " Reload files that have been modified outside of
 set shiftround                 " Round shifting off to multiples of shiftwidth
 filetype plugin on             " Enable filetype detection
 syntax on                      " Syntax highlighting? Hell yes.
-set tabstop=4 shiftwidth=4 softtabstop=4    " Set default indent level to 4
+set tabstop=2 shiftwidth=2 softtabstop=2    " Set default indent level to 2
 set autoindent                 " Autoindent is nice.
 set expandtab                  " I don't want tabs, I want spaces
 set smartindent                " Smartindent is awfully necessary
