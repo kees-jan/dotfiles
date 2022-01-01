@@ -1,9 +1,9 @@
 ;;; .emacs --- GNU Emacs 19.28+ startup file
 
-;; Copyright (C) 1996, 1997, 1999, 2000, 2001, 2008, 2013 by Raymond Penners.
+;; Copyright (C) 1996, 1997, 1999, 2000, 2001 by Raymond Penners.
 
 ;; Author: Raymond Penners <raymondp@stack.urc.tue.nl>
-;; Time-stamp: <2020-03-25 17:51:38 kees-jan>
+;; Time-stamp: <2022-01-01 14:29:26 kees-jan>
 
 ;;; Code:
 
@@ -12,6 +12,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Returns t if this version of Emacs is at least MAJOR.MINOR, nil otherwise.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defun my-emacs-version-ge (major minor) ""
   (or (> emacs-major-version major)
       (and (= emacs-major-version major)
@@ -223,8 +230,8 @@
 ;;; Read/write hooks
 (if (fboundp 'time-stamp)
     (add-hook 'write-file-hooks 'time-stamp))
-(if (fboundp 'copyright-update)
-    (add-hook 'write-file-hooks 'copyright-update))
+;;(if (fboundp 'copyright-update)
+;;    (add-hook 'write-file-hooks 'copyright-update))
 (if (fboundp 'auto-compression-mode)
     (auto-compression-mode 1))
 
@@ -282,3 +289,9 @@
 
 (eval-after-load 'rng-loc
   '(add-to-list 'rng-schema-locating-files "~/.schema/schemas.xml"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Magit
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-set-key (kbd "C-x g") 'magit-status)
